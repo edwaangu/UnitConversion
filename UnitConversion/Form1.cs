@@ -32,16 +32,19 @@ namespace UnitConversion
                 switch (conversionChoice)
                 {
                     case 1:
-                        inchesToCentimetres(value);
+                        outputLabel.Text = $"{value} inches = {inchesToCentimetres(value).ToString("0.00")} centimetres";
                         break;
                     case 2:
                         feetToCentimetres(value);
+                        outputLabel.Text = $"{value} feet = {feetToCentimetres(value).ToString("0.00")} centimetres";
                         break;
                     case 3:
                         yardsToMetres(value);
+                        outputLabel.Text = $"{value} yards = {yardsToMetres(value).ToString("0.00")} metres";
                         break;
                     case 4:
                         milesToKilometres(value);
+                        outputLabel.Text = $"{value} miles = {milesToKilometres(value).ToString("0.00")} kilometres";
                         break;
                 }
             }
@@ -50,25 +53,25 @@ namespace UnitConversion
                 outputLabel.Text = "Invalid inputs";
             }
         }
-        public void inchesToCentimetres(double inches)
+        public double inchesToCentimetres(double inches)
         {
             double toCm = inches * 2.54;
-            outputLabel.Text = $"{inches} inches = {toCm} centimetres";
+            return toCm;
         }
-        public void feetToCentimetres(double feet)
+        public double feetToCentimetres(double feet)
         {
             double toCm = feet * 30.48;
-            outputLabel.Text = $"{feet} feet = {toCm} centimetres";
+            return toCm;
         }
-        public void yardsToMetres(double yards)
+        public double yardsToMetres(double yards)
         {
             double toMetres = yards * 0.91;
-            outputLabel.Text = $"{yards} yards = {toMetres} metres";
+            return toMetres;
         }
-        public void milesToKilometres(double miles)
+        public double milesToKilometres(double miles)
         {
             double toKm = miles * 1.6;
-            outputLabel.Text = $"{miles} miles = {toKm} kilometres";
+            return toKm;
         }
     }
 }
